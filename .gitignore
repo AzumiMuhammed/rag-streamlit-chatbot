@@ -8,5 +8,7 @@
 __pycache__/
 *.pyc
 
-# Vector / local storage
+# RAG artifacts / local caches (usually huge)
 local_storage/
+data/
+evaluation/
