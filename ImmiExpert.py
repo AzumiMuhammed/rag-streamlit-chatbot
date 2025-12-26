@@ -13,6 +13,20 @@ st.set_page_config(
     layout="wide",
 )
 
+st.markdown("""
+**Tech Stack:** Streamlit · LlamaIndex · Google Gemini · RAG · Vector Search  
+
+This chatbot answers questions about German immigration using
+retrieval-augmented generation over curated documents.
+""")
+
+st.markdown("""
+**Sample questions:**
+- What are the requirements for a German Blue Card?
+- What are the requirements for German settlement permit?
+- Can students work part-time in Germany?
+""")
+
 
 # ---------------------------------------------------------
 # Source → URL mapping (for your PDFs / docs)
