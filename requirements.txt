@@ -1,0 +1,9 @@
+streamlit
+python-dotenv
+llama-index
+llama-index-core
+llama-index-embeddings-huggingface
+llama-index-llms-google-genai
+sentence-transformers
+ragas
+torch
