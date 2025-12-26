@@ -17,24 +17,16 @@ load_dotenv()
 
 
 def initialise_llm() -> GoogleGenAI:
-    """Initialises the GoogleGenAI LLM with core parameters from config."""
-
-    # Works locally (.env) AND on Streamlit Cloud (Secrets)
-    api_key: str | None = os.getenv("GOOGLE_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+    api_key = os.getenv("GOOGLE_API_KEY") or st.secrets.get("GOOGLE_API_KEY", None)
 
     if not api_key:
         raise ValueError(
-            "GOOGLE_API_KEY not found. Add it to Streamlit Cloud → Settings → Secrets "
-            "as GOOGLE_API_KEY = \"...\" (or set it in your local .env)."
+            "GOOGLE_API_KEY not found. "
+            "For Streamlit Cloud: add it in Settings → Secrets. "
+            "For local: set it in .env."
         )
 
-    return GoogleGenAI(
-        api_key=api_key,
-        model=LLM_MODEL
-        # max_new_tokens=LLM_MAX_NEW_TOKENS,
-        # temperature=LLM_TEMPERATURE,
-        # top_p=LLM_TOP_P,
-    )
+    return GoogleGenAI(api_key=api_key, model=LLM_MODEL)
 
 
 

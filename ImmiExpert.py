@@ -1,10 +1,12 @@
 import streamlit as st
+import os
 
 from src.model_loader import initialise_llm, get_embedding_model
 from src.engine import get_chat_engine
 
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.google_genai import GoogleGenAI  # adjust path if needed
+#st.write("GOOGLE_API_KEY exists:", bool(os.getenv("GOOGLE_API_KEY")))
 
 
 # ---------------------------------------------------------
