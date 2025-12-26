@@ -1,0 +1,12 @@
+# Secrets
+.env
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Vector / local storage
+local_storage/
