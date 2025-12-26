@@ -7,7 +7,3 @@
 # Python
 __pycache__/
 *.pyc
-
-# RAG artifacts / local caches (usually huge)
-local_storage/
-evaluation/

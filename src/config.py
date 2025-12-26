@@ -26,7 +26,7 @@ LLM_SYSTEM_PROMPT: str = (
 
 # EMBEDDING_MODEL_NAME: str = "sentence-transformers/all-MiniLM-L6-v2"
 
-EMBEDDING_MODEL_NAME: str = "BAAI/bge-m3" # Multilingual embedding model
+EMBEDDING_MODEL_NAME: str = "intfloat/multilingual-e5-small" # Multilingual embedding model
 
 
 # --- RAG/VectorStore Configuration ---

@@ -1,11 +1,24 @@
-streamlit
-python-dotenv
-llama-index
-llama-index-core
-llama-index-embeddings-huggingface
-llama-index-llms-google-genai
-llama-index-readers-file
-sentence-transformers
-ragas
-torch
-pypdf
+# Force CPU-only PyTorch wheels (prevents CUDA / NVIDIA installs)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core framework
+streamlit==1.52.2
+
+# Environment variable support (local dev only, safe in cloud)
+python-dotenv==1.2.1
+
+# Torch + embeddings (CPU, lightweight)
+torch==2.2.2
+sentence-transformers==5.2.0
+
+# LlamaIndex core + integrations
+llama-index==0.14.10
+llama-index-embeddings-huggingface==0.6.1
+llama-index-llms-google-genai==0.8.3
+llama-index-readers-file==0.5.6
+
+# Google Gemini SDK
+google-genai==1.56.0
+
+# PDF parsing
+pypdf==6.5.0
