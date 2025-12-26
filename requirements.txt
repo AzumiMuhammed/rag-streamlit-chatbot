@@ -4,6 +4,8 @@ llama-index
 llama-index-core
 llama-index-embeddings-huggingface
 llama-index-llms-google-genai
+llama-index-readers-file
 sentence-transformers
 ragas
 torch
+pypdf
