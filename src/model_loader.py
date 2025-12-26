@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from dotenv import load_dotenv
 
 from llama_index.llms.google_genai import GoogleGenAI
@@ -11,30 +12,30 @@ from src.config import (
     LLM_REPETITION_PENALTY
 )
 
-
-#Load environment variables from the .env file
+# Load environment variables from .env (local dev)
 load_dotenv()
 
 
 def initialise_llm() -> GoogleGenAI:
     """Initialises the GoogleGenAI LLM with core parameters from config."""
 
-    api_key: str | None = os.getenv("GOOGLE_API_KEY")
+    # Works locally (.env) AND on Streamlit Cloud (Secrets)
+    api_key: str | None = os.getenv("GOOGLE_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
 
     if not api_key:
         raise ValueError(
-            "GOOGLE_API_KEY not found. Make sure it's set in your .env file."
+            "GOOGLE_API_KEY not found. Add it to Streamlit Cloud → Settings → Secrets "
+            "as GOOGLE_API_KEY = \"...\" (or set it in your local .env)."
         )
 
     return GoogleGenAI(
         api_key=api_key,
-        model=LLM_MODEL,
-        # The following parameters are optional
-        # and will default to the model's defaults if not set
+        model=LLM_MODEL
         # max_new_tokens=LLM_MAX_NEW_TOKENS,
         # temperature=LLM_TEMPERATURE,
         # top_p=LLM_TOP_P,
     )
+
 
 
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
