@@ -2,6 +2,7 @@ import streamlit as st
 
 from src.model_loader import initialise_llm, get_embedding_model
 from src.engine import get_chat_engine
+from pathlib import Path
 
 
 # ---------------------------------------------------------
@@ -110,6 +111,35 @@ def extract_source_links(response) -> list[dict]:
 
     return source_links
 
+# Source file doumnload function
+
+def render_pdf_downloads(folder: str = "data"):
+    """
+    Renders download buttons for all PDF files inside the given folder.
+    """
+    folder_path = Path(folder)
+
+    if not folder_path.exists():
+        st.info("No downloadable source documents available.")
+        return
+
+    pdfs = sorted(folder_path.glob("*.pdf"))
+
+    if not pdfs:
+        st.info("No PDF sources found.")
+        return
+
+    st.subheader("📄 Download source documents")
+    for pdf_path in pdfs:
+        with open(pdf_path, "rb") as f:
+            st.download_button(
+                label=f"⬇️ {pdf_path.name}",
+                data=f,
+                file_name=pdf_path.name,
+                mime="application/pdf",
+            )
+
+
 
 # Lazy-load heavy resources (prevents Streamlit Cloud health-check EOF)
 
@@ -182,7 +212,7 @@ def main() -> None:
     )
     st.markdown(
         "<p style='color:#e63946; font-size:0.95rem; margin-top:0;'>"
-        "Your 🇩🇪 immigration information centre"
+        "Your 🇩🇪 German immigration information centre"
         "</p>",
         unsafe_allow_html=True,
     )
@@ -270,7 +300,10 @@ def main() -> None:
                             st.markdown(f"- [{label}]({url})")
                         else:
                             st.markdown(f"- {label}")
+                with st.expander("📄 Download source PDFs"):
+                    render_pdf_downloads("data")
 
+                
                 col_up, col_down, _ = st.columns([0.5, 0.5, 6])
                 with col_up:
                     st.button("👍", key="thumbs_up_live")
