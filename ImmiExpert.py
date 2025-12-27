@@ -25,7 +25,7 @@ st.markdown("""
 **Sample questions:**
 - What are the requirements for a German Blue Card?
 - What are the requirements for a German settlement permit?
-- Can people with opportunity card work part-time in Germany?
+- Can people with an opportunity card work part-time in Germany?
 """)
 
 
