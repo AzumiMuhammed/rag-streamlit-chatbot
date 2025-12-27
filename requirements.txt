@@ -4,6 +4,9 @@
 # Core framework
 streamlit==1.52.2
 
+# numpy
+numpy>=1.26.0
+
 # Environment variable support (local dev only, safe in cloud)
 python-dotenv==1.2.1
 
