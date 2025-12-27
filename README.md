@@ -4,6 +4,8 @@ https://rag-app-chatbot-cghbrhuectc4fsypks7vzu.streamlit.app/
 
 
 
+
+
 Overview:
 
 ImmiExpert is a Retrieval-Augmented Generation (RAG) chatbot that answers questions about German immigration policies using authoritative documents.
@@ -11,6 +13,8 @@ ImmiExpert is a Retrieval-Augmented Generation (RAG) chatbot that answers questi
 Instead of relying only on a language model’s memory, the chatbot retrieves relevant information from curated PDF sources and generates accurate, explainable responses. Users can also download the source PDFs directly from the app for transparency.
 
 This project demonstrates end-to-end AI application development, from document ingestion to cloud deployment.
+
+
 
 
 
@@ -31,6 +35,8 @@ Key Features:
 ✅ Clean conversational UI with chat history
 
 ✅ Configurable retrieval depth (Top-K control)
+
+
 
 
 
@@ -74,6 +80,8 @@ Streamlit Secrets (no hard-coded API keys)
 
 
 
+
+
 How It Works (RAG Pipeline):
 
 
@@ -94,6 +102,8 @@ Users see sources and can download the original PDFs.
 
 
 
+
+
 Deployment (Streamlit Cloud):
 
 App is deployed via GitHub integration
@@ -106,6 +116,8 @@ Compatible with Python 3.11+
 
 
 
+
+
 Example Questions
 
 What are the requirements for a German Blue Card?
@@ -113,6 +125,8 @@ What are the requirements for a German Blue Card?
 What are the requirements for a German settlement permit?
 
 Can people with an opportunity card work part-time in Germany?
+
+
 
 
 
@@ -132,6 +146,8 @@ Designing user-friendly and simple AI interfaces
 
 
 
+
+
 Next steps:
 
 Integration with external policy APIs or government data portals
@@ -143,3 +159,10 @@ Role-based access for advisors, administrators, and end-users
 Deployment using Docker or Kubernetes for scalable infrastructure
 
 Observability with logging, tracing, and alerting (e.g., Prometheus)
+
+
+
+
+
+Author:  Azumi Muhammed
+Data Scientist | Applied AI & LLM Engineer
