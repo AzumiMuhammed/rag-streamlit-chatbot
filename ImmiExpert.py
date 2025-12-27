@@ -23,8 +23,8 @@ retrieval-augmented generation over curated documents.
 st.markdown("""
 **Sample questions:**
 - What are the requirements for a German Blue Card?
-- What are the requirements for German settlement permit?
-- Can students work part-time in Germany?
+- What are the requirements for a German settlement permit?
+- Can people with opportunity card work part-time in Germany?
 """)
 
 
@@ -111,9 +111,8 @@ def extract_source_links(response) -> list[dict]:
     return source_links
 
 
-# ---------------------------------------------------------
-# IMPORTANT: Lazy-load heavy resources (prevents Streamlit Cloud health-check EOF)
-# ---------------------------------------------------------
+# Lazy-load heavy resources (prevents Streamlit Cloud health-check EOF)
+
 @st.cache_resource
 def _cached_llm():
     return initialise_llm()
@@ -171,9 +170,8 @@ def get_or_create_engine() -> object:
     return st.session_state.chat_engine
 
 
-# ---------------------------------------------------------
 # Main app
-# ---------------------------------------------------------
+
 def main() -> None:
     ensure_session_state()
 
@@ -194,7 +192,7 @@ def main() -> None:
         st.markdown("### ⚙️ Settings")
 
         st.session_state.similarity_top_k = st.slider(
-            "Number of chunks to retrieve",
+            "Level of information to retrieve",
             min_value=2,
             max_value=10,
             value=int(st.session_state.similarity_top_k),
@@ -210,11 +208,11 @@ def main() -> None:
             st.session_state.chat_engine_top_k = None
             st.rerun()
 
-        with st.expander("Deployment tips", expanded=False):
-            st.caption(
-                "If Streamlit Cloud restarts during startup, avoid loading large models at import-time. "
-                "This app loads the LLM/embeddings lazily on the first question."
-            )
+#  #      with st.expander("Deployment tips", expanded=False):
+#            st.caption(
+#                "If Streamlit Cloud restarts during startup, avoid loading large models at import-time. "
+#               "This app loads the LLM/embeddings lazily on the first question."
+#            )
 
     # Display history
     for idx, msg in enumerate(st.session_state.messages):
