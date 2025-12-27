@@ -44,22 +44,6 @@ Streamlit Secrets (no hard-coded API keys)
 .env ignored in version control
 
 
-Project Structure:
-
-rag-streamlit-chatbot/
-│
-├── ImmiExpert.py              # Main Streamlit application
-├── src/
-│   ├── engine.py              # Chat engine & vector index logic
-│   ├── model_loader.py        # LLM & embedding initialization
-│   └── config.py              # App configuration
-│
-├── data/
-│   ├── integrating in germany.pdf
-│   ├── other_source_documents.pdf
-│
-├── requirements.txt           # Python dependencies
-├── runtime.txt                # Python runtime version
 └── README.md
 
 
