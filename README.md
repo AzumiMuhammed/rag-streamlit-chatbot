@@ -1,12 +1,8 @@
-🇩🇪 German Immigration Information Chatbot (RAG-Based)
+# 🇩🇪 German Immigration Information Chatbot (RAG-Based)
 
 https://rag-app-chatbot-cghbrhuectc4fsypks7vzu.streamlit.app/
 
-
-
-
-
-Overview:
+## Overview:
 
 ImmiExpert is a Retrieval-Augmented Generation (RAG) chatbot that answers questions about German immigration policies using authoritative documents.
 
@@ -15,10 +11,7 @@ Instead of relying only on a language model’s memory, the chatbot retrieves re
 This project demonstrates end-to-end AI application development, from document ingestion to cloud deployment.
 
 
-
-
-
-Key Features:
+## Key Features:
 
 ✅ Retrieval-Augmented Generation (RAG) architecture
 
@@ -37,11 +30,7 @@ Key Features:
 ✅ Configurable retrieval depth (Top-K control)
 
 
-
-
-
-
-Tech Stack:
+## Tech Stack:
 
 Frontend & Deployment
 
@@ -78,14 +67,9 @@ Streamlit Secrets (no hard-coded API keys)
 .env ignored in version control
 
 
+## How It Works (RAG Pipeline):
 
-
-
-
-How It Works (RAG Pipeline):
-
-
-Document Ingestion:
+### Document Ingestion:
 Immigration-related PDFs are loaded and chunked.
 
 Embedding Generation:
@@ -101,10 +85,7 @@ Source Transparency:
 Users see sources and can download the original PDFs.
 
 
-
-
-
-Deployment (Streamlit Cloud):
+## Deployment (Streamlit Cloud):
 
 App is deployed via GitHub integration
 
@@ -115,10 +96,7 @@ Automatic redeployment on each commit
 Compatible with Python 3.11+
 
 
-
-
-
-Example Questions
+## Example Questions
 
 What are the requirements for a German Blue Card?
 
@@ -127,10 +105,7 @@ What are the requirements for a German settlement permit?
 Can people with an opportunity card work part-time in Germany?
 
 
-
-
-
-Why This Project Matters:
+## Why This Project Matters:
 
 This project demonstrates practical skills in:
 
@@ -145,10 +120,7 @@ Managing cloud deployments and secrets securely
 Designing user-friendly and simple AI interfaces
 
 
-
-
-
-Next steps:
+## Next steps:
 
 Integration with external policy APIs or government data portals
 
@@ -161,9 +133,7 @@ Deployment using Docker or Kubernetes for scalable infrastructure
 Observability with logging, tracing, and alerting (e.g., Prometheus)
 
 
-
-
-
-Author:  Azumi Muhammed
+## Author:
+Azumi Muhammed
 
 Data Scientist | Applied AI & LLM Engineer
